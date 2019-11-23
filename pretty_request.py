@@ -8,15 +8,14 @@ import requests
 _request = requests.request
 _get = requests.get
 _post = requests.post
-usa_dict = {'user-agent':
-               'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 '
-               '(KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'}
+ua = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/' \
+     '537.36(KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36'
 
 
 def request(*args, **kwargs):
     headers = kwargs.get('headers', {})
-    headers.update(**usa_dict)
-    print(kwargs.get('headers'))
+    if 'user-agent' not in headers:
+        headers['user-agent'] = ua
     try:
         return _request(*args, **kwargs)
     except requests.exceptions.ConnectionError:
