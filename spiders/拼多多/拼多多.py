@@ -34,6 +34,5 @@ def main():
     url2 = url2.format(list_id=list_id, page=1, flip=flip, anti_content=get_anticont(url1))
     print(url2)
 
-
 if __name__ == '__main__':
     main()
