@@ -9,6 +9,7 @@ from retrying import retry  # 设置重试次数用的
 
 # launcher.AUTOMATION_ARGS.remove("--enable-automation")
 from pyppeteer.launcher import launch
+from name_pwd import *
 
 
 def screen_size():
@@ -200,8 +201,7 @@ def input_time_random():
 
 
 if __name__ == '__main__':
-    username = '天涯浪子2013101'
-    pwd = 'gzt13387619000'
+
     # url = 'https://login.taobao.com/member/login.jhtml?style=mini&css_style=b2b&from=b2b&full_redirect=true&redirect_url=https://login.1688.com/member/jump.htm?target=https://login.1688.com/member/marketSigninJump.htm?Done=http://login.1688.com/member/taobaoSellerLoginDispatch.htm&reg= http://member.1688.com/member/join/enterprise_join.htm?lead=http://login.1688.com/member/taobaoSellerLoginDispatch.htm&leadUrl=http://login.1688.com/member/'
     url = 'https://login.taobao.com/member/login.jhtml?redirectURL=http%3A%2F%2Fs.taobao.com%2Fsearch%3Fq%3D%25E7%25BE%258E%25E9%25A3%259F%26imgfile%3D%26commend%3Dall%26ssid%3Ds5-e%26search_type%3Ditem%26sourceId%3Dtb.index%26spm%3Da21bo.2017.201856-taobao-item.1%26ie%3Dutf8%26initiative_id%3Dtbindexz_20170306'
     loop = asyncio.get_event_loop()  # 协程，开启个无限循环的程序流程，把一些函数注册到事件循环上。当满足事件发生的时候，调用相应的协程函数。

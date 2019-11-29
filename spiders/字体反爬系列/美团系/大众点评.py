@@ -1,3 +1,9 @@
+"""
+1.将
+
+"""
+
+
 import requests
 from fontTools.ttLib import TTFont
 from scrapy import Selector
@@ -16,7 +22,7 @@ def main():
     #     # for url in urls:
     #     #     print(url)
     # 暂时取一个为例
-    r = requests.get('http:' + '//s3plus.meituan.net/v1/mss_73a511b8f91f43d0bdae92584ea6330b/font/4560818f.woff?#iefix')
+    r = requests.get('http://s3plus.meituan.net/v1/mss_73a511b8f91f43d0bdae92584ea6330b/font/4560818f.woff')
     with open('font.woff', 'wb') as f:
         f.write(r.content)
     font = TTFont('font.woff')
@@ -25,5 +31,7 @@ def main():
     # print(uni_list)
 
 
+
 if __name__ == '__main__':
     main()
+    # print('unif823'.encode('latin').decode('unicode_escape'))
